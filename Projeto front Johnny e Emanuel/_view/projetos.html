@@ -71,9 +71,19 @@
 
                 <div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
                     <form action="#" method="post">
-                        <input name="projectname" type="text" class="form-control" id="projectname" placeholder="Nome do Projeto">
-                        <input name="date-first" type="date" class="form-control" id="date-fist" placeholder="Data de Inicio">
-                        <input name="date-last" type="date" class="form-control" id="date-last" placeholder="Data de Término">
+                        <div>
+                            <input name="organizationname" type="text" class="form-control" id="organizationname" placeholder="Nome da Empresa Contratante"> <input name="projectname" type="text" class="form-control" id="projectname" placeholder="Nome do Projeto">
+                            <input name="organizationname" type="text" class="form-control" id="organizationname" placeholder="Valor do projeto"> Data de Início<input name="date-first" type="date" class="form-control" id="date-fist" placeholder="Data de Inicio">                            Data de Entrega<input name="date-last" type="date" class="form-control" id="date-last" placeholder="Data de Término">Membros Participantes<input name="organizationmember" type="text" class="form-control" id="organizationmember"
+                                placeholder="Digite os Nomes Separardos Por Vírgula, (Ex: João, Maria, Ana)">Formas de Pagamento
+                            <div>
+
+                                <div class="col-md-6 col-lg-6 col-sm-12"><input type="radio" name="pagamento">Cartão</div>
+                                <div class="col-md-6 col-lg-6 col-sm-12"><input type="radio" name="pagamento">Dinheiro</div>
+
+
+                            </div>
+
+                        </div>
                         <div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
                             <input name="submit" type="submit" class="form-control" id="submit" value="REGISTRAR PROJETO">
                         </div>
