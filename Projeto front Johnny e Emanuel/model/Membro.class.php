@@ -7,15 +7,17 @@
 		private $password;
 		private $birthDate;
         private $email;
-        private $pontos;
+		private $points;
+		private $office;
 
-		function __construct($name, $password, $email, $birthDate, $id=null, $pontos){
+		function __construct($name, $password, $email, $birthDate, $id=null, $points, $office){
 			$this->name = $name;
 			$this->password = $password;
 			$this->email = $email;
 			$this->birthDate = $birthDate;
             $this->id = $id;
-            $this->pontos = $pontos;
+			$this->points = $points;
+			$this->office = $office;
 		}
 
 		function getId(){
@@ -36,9 +38,14 @@
 
 		function getBirthDate(){
 			return $this->birthDate;
-        }
-        function getPontos(){
-			return $this->pontos;
+		}
+		
+        function getPoints(){
+			return $this->points;
+		}
+
+		function getOffice(){
+			return $this->office;
 		}
 
 	}
