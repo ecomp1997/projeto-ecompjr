@@ -69,6 +69,12 @@ class Controllerdados {
 			echo "erro no cadastro";		
 		}
 	}
+	public function addMembro($email, $idProjeto){
+		$userdao = new UserDao();
+		$result = $userdao->addMembro($email, $idProjeto);
+		header('location:../_view/home.php');
+
+	}
 	public function verDadosProjeto(){
 		$userdao = new UserDao();
 		$result = $userdao->buscarDados();

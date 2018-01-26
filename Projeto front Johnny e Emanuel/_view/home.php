@@ -102,7 +102,7 @@ $tamanho = count($result);
                             <td><?php echo $fetch[3]; ?> &nbsp;</td>
                             <td><?php echo $fetch[4]; ?> &nbsp;</td>
                             <td><?php echo $fetch[5]; ?> &nbsp;</td>
-                            <td><?php echo $fetch[1]; ?> &nbsp;</td>
+                            <td><?php echo "R$ ".$fetch[1]; ?> &nbsp;</td>
                             <td><?php echo $fetch[7]; ?> &nbsp;</td>
                         </tr>
                     <?php
@@ -110,6 +110,11 @@ $tamanho = count($result);
                     ?>
                     <tbody>
                 </table>
+                <form action="../_controller/adicionaMembroProjeto.php" method="POST">
+                    <input name="email" type="email" class="form-control" required id="email" placeholder="Digite o Email do Membro Que Deseja Adicionar">
+                    <input name="idproject" type="number" class="form-control" required id="idproject" value="idproject" placeholder="Digite o Id do Projeto no Qual Quer Adicioná-lo">
+                    <input name="submit" type="submit" class="form-control" id="submit" value="Adicionar Membro">
+                </form>
             </div>
 
                 </div>
@@ -117,17 +122,17 @@ $tamanho = count($result);
                 <div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
                     <form action="../_controller/cadastroProjeto.php" method="POST">
                         <div>
-                            <input name="organizationname" type="text" class="form-control" id="organizationname" placeholder="Nome da Empresa Contratante"> 
-                            <input name="projectname" type="text" class="form-control" id="projectname" placeholder="Nome do Projeto">
-                            <input name="projectPrice" type="number" class="form-control" id="projectPrice" placeholder="Valor do projeto">
-                             Data de Início<input name="initialDate" type="date" class="form-control" id="intialDate" placeholder="Data de Inicio">                            
-                             Data de Entrega<input name="dateLast" type="date" class="form-control" id="dateLast" placeholder="Data de Término">
-                             Membros Participantes<input name="organizationmember" type="text" class="form-control" id="organizationmember"
-                                placeholder="Digite os Emails Separardos Por Vírgula, (Ex: João@gmail, Maria@yahoo)">Formas de Pagamento
+                            <input name="organizationname" type="text" required  class="form-control" id="organizationname" placeholder="Nome da Empresa Contratante"> 
+                            <input name="projectname" type="text" required class="form-control" id="projectname" placeholder="Nome do Projeto">
+                            <input name="projectPrice" type="number" required class="form-control" id="projectPrice" step=".01" placeholder="Valor do projeto">
+                             Data de Início<input name="initialDate" required type="date" class="form-control" id="intialDate" placeholder="Data de Inicio">                            
+                             Data de Entrega<input name="dateLast" required type="date" class="form-control" id="dateLast" placeholder="Data de Término">
+                             Membros Participantes<input name="organizationmember" required  type="text" class="form-control" id="organizationmember"
+                                placeholder="Digite o Email de Apenas 1(um) Membro do Projeto">Formas de Pagamento
                             <div>
 
-                                <div class="col-md-6 col-lg-6 col-sm-12"><input type="radio" name="pagamento">Cartão</div>
-                                <div class="col-md-6 col-lg-6 col-sm-12"><input type="radio" name="pagamento">Dinheiro</div>
+                                <div class="col-md-6 col-lg-6 col-sm-12"><input required type="radio" value="Cartao" name="pagamento">Cartão</div>
+                                <div class="col-md-6 col-lg-6 col-sm-12"><input required type="radio" value="Dinheiro" name="pagamento">Dinheiro</div>
 
 
                             </div>
@@ -138,13 +143,13 @@ $tamanho = count($result);
                         </div>
                     </form>
                     <form action="../_controller/cadastro.php" method="POST">
-                        <input name="name" type="text" class="form-control" id="name" placeholder="Nome do Membro">
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Email">
-                        <input name="password" type="password" class="form-control" id="password" placeholder="Senha">
-                        <input name="confirmPassword" type="password" class="form-control" id="confirmPassword" placeholder="Confirme Senha">
-                        <input name="points" type="number" class="form-control" id="points" placeholder="Pontos do Membro">
-                        Data de Nascimento <input name="dateB" type="date" class="form-control" id="dateB">
-                        <input name="office" type="text" class="form-control" id="office" placeholder="Cargo na Empresa">
+                        <input name="name" required  type="text" class="form-control" id="name" placeholder="Nome do Membro">
+                        <input name="email" required type="email" class="form-control" id="email" placeholder="Email">
+                        <input name="password" required type="password" class="form-control" id="password" placeholder="Senha">
+                        <input name="confirmPassword" required type="password" class="form-control" id="confirmPassword" placeholder="Confirme Senha">
+                        <input name="points" required type="number" class="form-control" id="points" placeholder="Pontos do Membro">
+                        Data de Nascimento <input name="dateB" required type="date" class="form-control" id="dateB">
+                        <input name="office" required type="text" class="form-control" id="office" placeholder="Cargo na Empresa">
                         <div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
                             <input name="submit" type="submit" class="form-control" id="submit" value="CADASTRAR USUÁRIO">
                         </div>
